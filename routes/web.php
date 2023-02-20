@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\HomeController;
+use App\Http\Controllers\Site\LoginController;
+use App\Http\Controllers\Site\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,6 @@ use App\Http\Controllers\Site\HomeController;
 //     Route::get('/', HomeController::class);
 
 // });
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::get('register', [RegisterController::class, 'index'])->name('register');
